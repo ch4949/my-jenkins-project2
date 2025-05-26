@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                bat 'python -m pip install -r requirements.txt'  # 修改为bat
             }
         }
         stage('Run Tests') {
             steps {
-                sh 'pytest test_main.py'
+                bat 'python -m pytest test_main.py'  # 修改为bat
             }
         }
     }
